@@ -67,7 +67,8 @@ const port = process.env.PORT || 3000;
 MongoClient.connect(url, (err, client) => {
     if (err) return console.log(err)
     db = client.db('ian-test')
-    app.listen(port, () => {
-        console.log('listening on 3000')
-    })
+})
+
+app.listen(port, () => {
+    console.log('listening on 3000')
 })
