@@ -4,13 +4,7 @@ const bodyParser     = require('body-parser');
 const app            = express();
 const ObjectID = require('mongodb').ObjectID;
 
-let url;
-if (process.env.PORT) {
-    url = process.env.DATABASE_URL
-} else {
-    const { DB_URL} = require('./config.json');
-    url = DB_URL;
-}
+let url = process.env.DATABASE_URL;
 
 app.use(bodyParser.json());
 
