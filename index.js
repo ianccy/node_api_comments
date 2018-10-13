@@ -4,7 +4,9 @@ const bodyParser     = require('body-parser');
 const app            = express();
 const ObjectID = require('mongodb').ObjectID;
 
-let url = process.env.PROD_MONGODB || 'mongodb://ian:chu791228@ds131323.mlab.com:31323/ian-test';
+const { DB_URL } = require('config');
+
+const url = process.env.PROD_MONGODB || DB_URL;
 
 app.use(bodyParser.json());
 
