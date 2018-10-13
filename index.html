@@ -8,5 +8,16 @@
 </head>
 <body>
   <h1>Hello!!</h1>
+  <script>
+    getData();
+    function getData(){
+      fetch('https://thawing-stream-74537.herokuapp.com/comments', {method: 'get'})
+        .then(function(response) {
+            return response.json()
+        }).catch(function(err) {
+            return JSON.stringify(err);
+        })
+    }
+  </script>
 </body>
 </html>

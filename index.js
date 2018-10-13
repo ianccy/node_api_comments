@@ -2,9 +2,14 @@ const express        = require('express');
 const MongoClient    = require('mongodb').MongoClient;
 const bodyParser     = require('body-parser');
 const app            = express();
+const cors = require('cors');
+
 const ObjectID = require('mongodb').ObjectID;
 
-const { DB_URL } = require('./config.json');
+app.use(cors());
+app.options('*', cors());
+
+// const { DB_URL } = require('./config.json');
 
 const url = process.env.PROD_MONGODB || DB_URL;
 
