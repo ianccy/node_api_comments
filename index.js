@@ -4,7 +4,7 @@ const bodyParser     = require('body-parser');
 const app            = express();
 const ObjectID = require('mongodb').ObjectID;
 
-const { DB_URL } = require('config');
+const { DB_URL } = require('./config.json');
 
 const url = process.env.PROD_MONGODB || DB_URL;
 
