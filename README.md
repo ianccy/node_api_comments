@@ -7,11 +7,9 @@ you need create your mongodb to store deta.
 ## npm install
 install node_modules
 
-## creare your config.json
+## creare your env for local running
 ```
-{
-  "DB_URL" : "mongodb://dbuser:dbpassword@ds131323.mlab.com:xxxxx/xxxxxxx"
-}
+PROD_MONGODB : "mongodb://dbuser:dbpassword@ds131323.mlab.com:xxxxx/xxxxxxx"
 ```
 
 ## start server
@@ -41,3 +39,23 @@ PUT http://localhost:3000/comments/:id
   time: yyyy/mm/dd-hour:min:sec or 
   content: xxx 
 }
+
+### Deploy to Heroku
+```
+heroku login
+
+git init
+git add .
+git commit -m "init node"
+
+// create heroku repo
+heroku create
+
+// push remote
+git push heroku master
+
+heroku ps:scale web=1
+
+heroku open
+
+```
