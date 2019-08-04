@@ -8,7 +8,8 @@ const ObjectID = require('mongodb').ObjectID;
 app.use(cors());
 app.options('*', cors());
 
-// const { DB_URL } = require('./config.json');
+
+const { DB_URL } = require('./config.json');
 
 const url = process.env.PROD_MONGODB || DB_URL;
 
@@ -69,6 +70,8 @@ app.put('/comments/:id', (req, res) => {
 })
 
 const port = process.env.PORT || 3000;
+
+console.log(port);
 
 MongoClient.connect(url, (err, client) => {
     if (err) return console.log(err)
